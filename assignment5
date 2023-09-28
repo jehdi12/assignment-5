@@ -1,0 +1,25 @@
+# Global variable to keep track of the number of function calls
+function_calls = 0
+
+def fibonacci(n):
+    global function_calls  # Use the global variable
+    
+    
+    function_calls += 1
+    
+    if n <= 1:
+        return n
+    else:
+        return fibonacci(n - 1) + fibonacci(n - 2)
+
+
+def reset_counter():
+    global function_calls
+    function_calls = 0
+
+# Example usage:
+n = 5
+reset_counter()  
+result = fibonacci(n)
+print(f"Fibonacci({n}) = {result}")
+print(f"Function calls: {function_calls}")
